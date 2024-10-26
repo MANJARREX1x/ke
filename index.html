@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Para my Keish</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <div class="container">
+    <h1>✨Para my Keish✨</h1>
+    <div class="question-container" id="question-container">
+      <p class="question" id="question"></p>
+      <button class="next-button" onclick="nextQuestion()">Lo acepto</button>
+    </div>
+    
+    <!-- Contenedor de video oculto al inicio -->
+    <div class="video-container" id="video-container" style="display: none;">
+      <video id="final-video" controls autoplay>
+        <source src="video.mp4" type="video/mp4">
+        Tu navegador no soporta la reproducción de videos.
+      </video>
+    </div>
+  </div>
+
+  <script>
+    const questions = [
+      "Este es un presente virtual para ti😽",
+      "Un detallito",
+      "you are my type of woman",
+    ];
+    let currentQuestion = 0;
+
+    function nextQuestion() {
+      currentQuestion++;
+      if (currentQuestion < questions.length) {
+        document.getElementById("question").innerText = questions[currentQuestion];
+      } else {
+        document.getElementById("question-container").style.display = "none";
+        document.getElementById("video-container").style.display = "block";
+      }
+    }
+  </script>
+</body>
+</html>
